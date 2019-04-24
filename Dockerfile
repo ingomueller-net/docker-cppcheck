@@ -1,4 +1,4 @@
-FROM ubuntu:xenial as builder
+FROM ubuntu:bionic as builder
 MAINTAINER Ingo Müller <ingo.mueller@inf.ethz.ch>
 
 RUN apt-get update && \
@@ -26,7 +26,7 @@ RUN mkdir /src/ && \
     done && [ $fail -eq 0 ]
 
 # Copy the build result into the main image
-FROM ubuntu:xenial
+FROM ubuntu:bionic
 
 COPY --from=builder /opt/ /opt/
 
