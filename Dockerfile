@@ -11,7 +11,7 @@ RUN apt-get update && \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /src/ && \
-    for v in $(seq 80 88); do \
+    for v in $(seq 80 90); do \
         cd /src/ && \
         wget https://github.com/danmar/cppcheck/archive/1.$v.zip && \
         unzip 1.$v.zip && \
